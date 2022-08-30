@@ -2145,6 +2145,9 @@ window.__require = function e(t, n, o) {
         },
         gameOverShowText: function (e, t) {
           console.log("gameScore=" + e + "&gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult);//게임결과 점수 = e
+          var score = document.getElementById("get_score");
+          score.value = e;
+          alert(e)
           this.ajaxLoad("http://www.wesane.com/admin.php/Gamescore/saveGamescore", "gameScore=" + e + "&gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult)
         },
         gamePV_load: function () {
