@@ -2,6 +2,11 @@
  * 选分弹窗
  * @type {number}
  */
+var score_in_Page = document.getElementById("get_score");
+if(score_in_Page.value == 0){
+  alert("0입니다!!!!")
+}
+
 
 if (selectModal) {
   let extraScoreStr = '';
@@ -1048,13 +1053,13 @@ window.__require = function e(t, n, o) {
           this.canClick && 0 == cc.find("Canvas/uiEffectPanel").childrenCount && a.default.Instance.RestartGame()
         }, t.prototype.OnClickMoreGame = function () {
           this.canClick && (this.moreGameBtn.off(cc.Node.EventType.TOUCH_START, this.OnClickMoreGame, this), this.canClick = !1, this.moreGameBtn.runAction(cc.sequence(cc.scaleTo(.1, 1.1), cc.scaleTo(.1, 1))), this.scheduleOnce(function () {
-            window.location.href = "http://m.wesane.com/"
+            window.location.href ="" // http://m.wesane.com/
           }, .15))
         }, t.prototype.GetContentByScore = function (e) {
           var t = Math.ceil(e / 1500 * 94);
           t > 94 && (t = 94);
           var n = 5 + t;
-          return "\u51fb\u8d25\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", ["\u51fb\u8d25\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", "\u64ca\u6557\u4e86\u5168\u7403" + n + "%\u7684\u73a9\u5bb6\uff01", "Beat " + n + " % of global players", "\uc804 \uc138\uacc4" + n + "% \uc758 \uc720 \uc800 \ub97c \uc774 \uacbc \uc2b5 \ub2c8 \ub2e4"][i.default.returnCurrentLanType() - 1]
+          return "키붕이들의 " + n + "%를 이겼어!", ["키붕이들의 " + n + " % 를 이겼어!"][i.default.returnCurrentLanType() - 1]
         }, t.Instance = null, c([d(cc.Node)], t.prototype, "clickMask", void 0), c([d(cc.Node)], t.prototype, "failedUiBox", void 0), c([d(cc.Node)], t.prototype, "di", void 0), c([d(cc.Label)], t.prototype, "levelTxt", void 0), c([d(cc.Node)], t.prototype, "guan", void 0), c([d(cc.Node)], t.prototype, "continueTip", void 0), c([d(cc.Label)], t.prototype, "scoreLabel", void 0), c([d(cc.Node)], t.prototype, "highScoreNode", void 0), c([d(cc.Node)], t.prototype, "highScore", void 0), c([d(cc.Label)], t.prototype, "highScoreLabel", void 0), c([d(cc.Label)], t.prototype, "resultTxt", void 0), c([d(cc.Label)], t.prototype, "overTxt", void 0), c([d(cc.Node)], t.prototype, "moreGameBtn", void 0), c([d(cc.Node)], t.prototype, "reStartBtn", void 0), c([d(cc.Vec2)], t.prototype, "failedBoxPos", void 0), c([d], t.prototype, "standardScore", void 0), c([d(cc.Node)], t.prototype, "bgMask", void 0), c([d(cc.Node)], t.prototype, "bencichengji", void 0), c([d(cc.SpriteFrame)], t.prototype, "bencichengjiarr", void 0), c([d(cc.Node)], t.prototype, "gengduoyouxi", void 0), c([d(cc.SpriteFrame)], t.prototype, "gengduoyouxiarr", void 0), c([d(cc.Node)], t.prototype, "adsButton2", void 0), c([d(cc.Node)], t.prototype, "bannerButton", void 0), t = n = c([u], t)
       }(cc.Component);
     n.default = p, cc._RF.pop()
@@ -1469,7 +1474,7 @@ window.__require = function e(t, n, o) {
     cc._RF.push(t, "197e1hfNnxIcJx73V3VhUxY", "HttpManagerJs");
     var a = e("GameConfig"),
       i = (c(o = {
-        URL: "http://www.wesane.com/h5service.php/Interface/services",
+        URL: "", //http://www.wesane.com/h5service.php/Interface/services
         cacheList: null,
         isBusy: null,
         req: null,
@@ -1788,8 +1793,8 @@ window.__require = function e(t, n, o) {
         gameT1: "\u5173\u6ce8\u6211\u4eec",
         gameT2: "\u7eb8\u724c\u63a5\u9f99",
         gameT3: "\u9526\u4e0a\u6dfb\u82b1",
-        gameUrl1: "http://g.regogame.com/game/9/",
-        gameUrl2: "http://g.regogame.com/game/3/",
+        gameUrl1: "",
+        gameUrl2: "",
         gameT11: "\u5173\u6ce8\u5fae\u4fe1",
         gameT12: "\u5173\u6ce8Kakao",
         gameT13: "\u5173\u6ce8Line",
@@ -1809,8 +1814,8 @@ window.__require = function e(t, n, o) {
         gameT1: "Follow Us",
         gameT2: "Thousand Flower",
         gameT3: "Eliminate Star",
-        gameUrl1: "http://g.fromgame.com/game/53",
-        gameUrl2: "http://g.fromgame.com/game/13",
+        gameUrl1: "",
+        gameUrl2: "",
         gameT11: "Focus WeChat",
         gameT12: "Focus Kakao",
         gameT13: "Focus Line",
@@ -2141,13 +2146,12 @@ window.__require = function e(t, n, o) {
             i = c.substring(c.lastIndexOf("/game/") + 1, c.length).split("/");
           i.length >= 2 && (a = i[1]), this.gameHttpId = a, cc.log("gameId", a);
           e.substring(e.lastIndexOf("//") + 4, e.lastIndexOf("com") + 3);
-          this.moreGameUrl = "http://m.wesane.com/"
+          this.moreGameUrl = ""
         },
         gameOverShowText: function (e, t) {
-          console.log("gameScore=" + e + "  &gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult);//게임결과 점수 = e
-          var score = document.getElementById("get_score");
-          score.value = e;
-          alert(score)
+          console.log("gameScore=" + e );//게임결과 점수 = e
+          score_in_Page.setAttribute('value',e);
+          alert(score_in_Page.value);
           //this.ajaxLoad("http://www.wesane.com/admin.php/Gamescore/saveGamescore", "gameScore=" + e + "&gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult)
         },
         gamePV_load: function () {
@@ -2160,14 +2164,10 @@ window.__require = function e(t, n, o) {
           o.onreadystatechange = n, o.open("POST", e), o.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), o.send(t)
         },
         scoreResult: function (e) {
-
           if (null != e.currentTarget.response && "" != e.currentTarget.response) {
             var t = JSON.parse(e.currentTarget.response);
             cc.log("endshow", t.content), r.endHttpShowInfo = t.content
           }
-          var score = document.getElementById("get_score");
-          score.value = e;
-          alert(score)
         },
         initLanguage: function () {
           var e = null;
