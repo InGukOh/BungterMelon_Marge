@@ -40,8 +40,6 @@ window.__require = function e(t, n, o) {
   AddScore: [function (e, t, n) {
     "use strict";
 
-    console.log("e : "+e + " t : "+t + " n : "+n)
-
     cc._RF.push(t, "68076EFnW1JeZUzdnbOOKNr", "AddScore");
     var o = this && this.__extends || function () {
         var e = function (t, n) {
@@ -2150,10 +2148,10 @@ window.__require = function e(t, n, o) {
           var score = document.getElementById("get_score");
           score.value = e;
           alert(score)
-          this.ajaxLoad("http://www.wesane.com/admin.php/Gamescore/saveGamescore", "gameScore=" + e + "&gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult)
+          //this.ajaxLoad("http://www.wesane.com/admin.php/Gamescore/saveGamescore", "gameScore=" + e + "&gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult)
         },
         gamePV_load: function () {
-          this.ajaxLoad("http://www.wesane.com/admin.php/Activityshow/gamelogo", "gameID=" + this.gameHttpId, this.ajaxOnLogoResult)
+          //this.ajaxLoad("http://www.wesane.com/admin.php/Activityshow/gamelogo", "gameID=" + this.gameHttpId, this.ajaxOnLogoResult)
         },
         ajaxOnLogoResult: function () {
         },
@@ -2162,10 +2160,14 @@ window.__require = function e(t, n, o) {
           o.onreadystatechange = n, o.open("POST", e), o.setRequestHeader("Content-Type", "application/x-www-form-urlencoded"), o.send(t)
         },
         scoreResult: function (e) {
+
           if (null != e.currentTarget.response && "" != e.currentTarget.response) {
             var t = JSON.parse(e.currentTarget.response);
             cc.log("endshow", t.content), r.endHttpShowInfo = t.content
           }
+          var score = document.getElementById("get_score");
+          score.value = e;
+          alert(score)
         },
         initLanguage: function () {
           var e = null;
