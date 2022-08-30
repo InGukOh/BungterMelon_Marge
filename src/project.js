@@ -40,6 +40,8 @@ window.__require = function e(t, n, o) {
   AddScore: [function (e, t, n) {
     "use strict";
 
+    console.log("e : "+e + " t : "+t + " n : "+n)
+
     cc._RF.push(t, "68076EFnW1JeZUzdnbOOKNr", "AddScore");
     var o = this && this.__extends || function () {
         var e = function (t, n) {
