@@ -2,16 +2,23 @@
  * 选分弹窗
  * @type {number}
  */
-window.onload = function (){
-  console.log("온로드 실행 테스트중");
 
-  window.parent.postMessage({Data : 'testtesttesttesttest!!!!!!!!!!!'}, '*');
+window.onload = function() {
 
-}
-/*var score_in_Page = parent.score;
+  console.log('child load');
+
+  //targetWindow.postMessage(message, targetOrigin, [transfer]);
+  window.parent.postMessage({ childData : 'test data' }, '*');
+
+  //모든 도메인에 대해서 허용하고자 하는 경우 targetOrigin(두번째인자) 인자를 '*'로 작성
+  //보안을 위해 추천하지 않음
+  //window.parent.postMessage({ childData : 'test data' }, '*');
+
+};
+
 if(score_in_Page.value == 0){
   alert("0입니다!!!!")
-}*/
+}
 
 
 if (selectModal) {
