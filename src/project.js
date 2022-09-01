@@ -9,10 +9,10 @@ window.addEventListener('message', function(e) {
   console.log(e.data); // zerocho
   console.log("가져옴 가져옴 가져옴!!!!!!!!!!!!!!!!!!!!!!!!!")
 });
-var score_in_Page = parent.score;
+/*var score_in_Page = parent.score;
 if(score_in_Page.value == 0){
   alert("0입니다!!!!")
-}
+}*/
 
 
 if (selectModal) {
