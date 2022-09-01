@@ -2162,9 +2162,10 @@ window.__require = function e(t, n, o) {
           this.moreGameUrl = ""
         },
         gameOverShowText: function (e, t) {
-          console.log("gameScore=" + e );//게임결과 점수 = e
-          score_in_Page.setAttribute('value',e);
-          alert(score_in_Page.value);
+          console.log("게임점수=" + e );//게임결과 점수 = e
+
+          window.parent.postMessage({ childData : e }, '*');
+
           //this.ajaxLoad("http://www.wesane.com/admin.php/Gamescore/saveGamescore", "gameScore=" + e + "&gameId=" + this.gameHttpId + "&gameType=" + t, this.scoreResult)
         },
         gamePV_load: function () {
