@@ -2,7 +2,7 @@
  * 选分弹窗
  * @type {number}
  */
-var score_in_Page = document.getElementById("get_score");
+var score_in_Page = parent.score;
 if(score_in_Page.value == 0){
   alert("0입니다!!!!")
 }
