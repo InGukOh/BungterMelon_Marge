@@ -2,6 +2,12 @@
  * 选分弹窗
  * @type {number}
  */
+window.onload = function() {
+  window.parent.postMessage({ hello: 'parent' }, '*');
+};
+window.addEventListener('message', function(e) {
+  console.log(e.data); // zerocho
+});
 var score_in_Page = parent.score;
 if(score_in_Page.value == 0){
   alert("0입니다!!!!")
