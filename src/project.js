@@ -7,6 +7,7 @@ window.onload = function() {
 };
 window.addEventListener('message', function(e) {
   console.log(e.data); // zerocho
+  console.log("가져옴 가져옴 가져옴!!!!!!!!!!!!!!!!!!!!!!!!!")
 });
 var score_in_Page = parent.score;
 if(score_in_Page.value == 0){
