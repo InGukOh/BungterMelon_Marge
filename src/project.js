@@ -16,9 +16,9 @@ window.onload = function() {
 
 };
 
-if(score_in_Page.value == 0){
+/*if(score_in_Page.value == 0){
   alert("0입니다!!!!")
-}
+}*/
 
 
 if (selectModal) {
